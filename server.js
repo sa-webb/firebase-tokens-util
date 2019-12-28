@@ -15,11 +15,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-var serviceAccount = require('./serviceAccountKey.json');
+// var serviceAccount = require('./serviceAccountKey.json');
+var serviceAccount = require('./fire-token.json');
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: 'https://custom-tokens.firebaseio.com'
+// });
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://custom-tokens.firebaseio.com'
+  databaseURL: "https://firestore-auth0-chat-app.firebaseio.com"
 });
 
 const userRouter = require('./src/routes/user.routes');
