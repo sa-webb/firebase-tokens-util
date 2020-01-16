@@ -15,16 +15,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// var serviceAccount = require('./serviceAccountKey.json');
-var serviceAccount = require('./fire-token.json');
+//var serviceAccount = require('./keys/road-to-firebase-key.json');
+
 // admin.initializeApp({
 //   credential: admin.credential.cert(serviceAccount),
 //   databaseURL: 'https://custom-tokens.firebaseio.com'
 // });
+// var serviceAccount = require('./keys/auth0-chat-token.json');
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://firestore-auth0-chat-app.firebaseio.com"
+// });
+
+var serviceAccount = require('./keys/typescript-toptal.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://firestore-auth0-chat-app.firebaseio.com"
+  databaseURL: "https://typescript-toptal.firebaseio.com"
 });
 
 const userRouter = require('./src/routes/user.routes');
