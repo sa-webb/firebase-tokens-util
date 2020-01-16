@@ -1,7 +1,3 @@
-var admin = require('firebase-admin');
-
-var serviceAccount = require('../../serviceAccountKey.json');
-
 const express = require("express");
 const router = express.Router();
 
