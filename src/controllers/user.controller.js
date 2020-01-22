@@ -1,7 +1,5 @@
 var admin = require('firebase-admin');
 
-//var serviceAccount = require('../../serviceAccountKey.json');
-
 exports.get_user = async (req, res) => {
   let uid = req.params.id;
   admin.auth().getUser(uid)
